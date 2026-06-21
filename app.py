@@ -37,7 +37,7 @@ def query_local_llm(prompt: str):
         print("\n❌ Error: Cannot connect to the local server.")
         print("Please ensure you ran ./start_server.sh first.")
         print("\n🔄 CLI FALLBACK: If you'd rather bypass the server, use this command directly in your terminal:")
-        print(f'   ../llama.cpp/build/bin/llama-cli -m <PATH_TO_YOUR_MODEL.gguf> -p "{prompt}" -n 256 -ngl 0')
+        print(f'   ./llama.cpp/build/bin/llama-cli -m <PATH_TO_YOUR_MODEL.gguf> -p "{prompt}" -n 256 -ngl 0')
         sys.exit(1)
     except Exception as e:
         print(f"\n❌ An unexpected error occurred: {e}")

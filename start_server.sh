@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
 fi
 
 MODEL_PATH="$1"
-LLAMA_SERVER_BIN="../llama.cpp/build/bin/llama-server"
+LLAMA_SERVER_BIN="./llama.cpp/build/bin/llama-server"
 PORT=8080
 CTX_SIZE=2048
 
