@@ -1,13 +1,21 @@
 #!/bin/bash
 
-# Ensure a model path is provided as an argument
+# 1. Ensure an argument was provided
 if [ -z "$1" ]; then
-    echo "❌ Error: Please provide the path to your .gguf model."
+    echo "❌ Error: No model path provided."
     echo "Usage: ./start_server.sh /path/to/your_model.gguf"
     exit 1
 fi
 
 MODEL_PATH="$1"
+
+# 2. Ensure the provided file actually exists
+if [ ! -f "$MODEL_PATH" ]; then
+    echo "❌ Error: Model file not found at '$MODEL_PATH'"
+    echo "Please check the spelling or path and try again."
+    exit 1
+fi
+
 LLAMA_SERVER_BIN="./llama.cpp/build/bin/llama-server"
 PORT=8080
 CTX_SIZE=2048
