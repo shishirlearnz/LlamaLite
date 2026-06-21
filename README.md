@@ -2,7 +2,7 @@
 
 A minimal, lightning-fast open-source repository showcasing how to build a local, privacy-first AI application using `llama.cpp` as the backend engine and Python as the client interface.
 
-Optimized specifically for hardware with limited VRAM/RAM (such as 8GB M-series Macs) with **built-in hardware resilience and auto-fallback mechanisms**.
+Optimized specifically for hardware with limited VRAM/RAM (such as 8GB M-series Macs) with **built-in hardware resilience and auto-fallback mechanisms**. Fully compatible with Linux and macOS.
 
 ---
 
@@ -20,7 +20,7 @@ The project consists of the following 5 core files:
 
 ## Prerequisites
 
-- Python 3.9+
+- Python 3.9+ (On Debian/Ubuntu Linux, ensure `python3-venv` is installed)
 - CMake (for building the backend engine)
 - A GGUF format model (e.g., `Llama3.3-8B-Instruct-Thinking-Heretic-Uncensored-Claude-4.5-Opus-High-Reasoning.i1-Q4_K_M.gguf`)
 
@@ -38,10 +38,17 @@ cmake -B build
 cmake --build build --config Release
 ```
 
-### 2. Set Up the Environment
-Install the required packages inside your local `LlamaLite` directory:
+### 2. Set Up the Python Environment
+To prevent system conflicts on modern macOS and Linux distributions, we use an isolated Python virtual environment. Inside your local `LlamaLite` directory, run:
 
 ```bash
+# 1. Create the virtual environment
+python3 -m venv venv
+
+# 2. Activate the virtual environment
+source venv/bin/activate
+
+# 3. Install the dependencies safely
 pip install -r requirements.txt
 ```
 
@@ -58,9 +65,10 @@ chmod +x start_server.sh
 ```
 
 ### Step 2: Query the Model
-Open a new terminal window and execute the client script with your prompt:
+Open a new terminal window, activate your virtual environment, and execute the client script with your prompt:
 
 ```bash
+source venv/bin/activate
 python app.py "What is the difference between compiling and interpreting code?"
 ```
 
