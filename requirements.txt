@@ -1,1 +1,4 @@
 requests==2.32.3
+# Pin urllib3 for macOS compatibility; newer versions require OpenSSL 1.1.1+
+urllib3<2; sys_platform == 'darwin'
+urllib3>=1.21.1; sys_platform != 'darwin'
