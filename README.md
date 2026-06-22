@@ -31,11 +31,11 @@ cd ..
 To keep your computer's system files clean, we use a **Virtual Environment**. This creates an isolated "sandbox" for this project, ensuring that our Python dependencies don't conflict with other software on your machine and preventing "permission denied" errors when installing packages.
 
 ```bash
-# 1. Create the sandbox (creates a folder named 'venv')
-python3 -m venv venv
+# 1. Create the sandbox (creates a folder named '.venv')
+python3 -m venv .venv
 
 # 2. Activate the sandbox (locks your terminal into this project)
-source venv/bin/activate
+source .venv/bin/activate
 
 # 3. Install project dependencies into the sandbox
 pip install -r requirements.txt
@@ -60,7 +60,7 @@ chmod +x start_server.sh
 Open a new terminal window, activate your environment, and query the model:
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 python app.py "What is the difference between compiling and interpreting code?"
 ```
 
