@@ -3,7 +3,8 @@
 # 1. Ensure an argument was provided
 if [ -z "$1" ]; then
     echo "❌ Error: No model path provided."
-    echo "Usage: ./start_server.sh /path/to/your_model.gguf"
+    echo "Usage: ./start_server.sh <PATH_TO_YOUR_MODEL.gguf>"
+    echo "Example: ./start_server.sh ~/Downloads/Llama-3.2-3B-Instruct-Q8_0.gguf"
     exit 1
 fi
 
