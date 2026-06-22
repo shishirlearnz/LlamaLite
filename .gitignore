@@ -1,0 +1,13 @@
+# Dependency engine
+llama.cpp/
+
+# Local build artifacts
+build/
+__pycache__/
+*.pyc
+
+# Python environment
+.venv/
+
+# OS-specific files
+.DS_Store
