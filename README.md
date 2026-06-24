@@ -16,8 +16,16 @@ Optimized specifically for hardware with limited VRAM/RAM (such as 8GB M-series 
 
 ## Setup Instructions
 
-### 1. Build the Backend Engine
-Clone and build the server binaries via SSH:
+### 1. Clone the Repository
+First, clone this repository (LlamaLite) to your local machine. This is the main project you'll be working with:
+
+```bash
+git clone git@github.com:shishirlearnz/LlamaLite.git
+cd LlamaLite
+```
+
+### 2. Build the Backend Engine
+LlamaLite depends on `llama.cpp` as its backend engine. Clone and build the server binaries (this is a separate repository that LlamaLite uses internally):
 
 ```bash
 git clone git@github.com:ggml-org/llama.cpp.git
@@ -27,7 +35,7 @@ cmake --build build --config Release
 cd ..
 ```
 
-### 2. Set Up the Python Environment
+### 3. Set Up the Python Environment
 To keep your computer's system files clean, we use a **Virtual Environment**. This creates an isolated "sandbox" for this project, ensuring that our Python dependencies don't conflict with other software on your machine and preventing "permission denied" errors when installing packages.
 
 ```bash
