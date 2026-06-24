@@ -11,6 +11,7 @@ Optimized specifically for hardware with limited VRAM/RAM (such as 8GB M-series 
 - Python 3.9+ (On Debian/Ubuntu Linux, ensure `python3-venv` is installed)
 - CMake (for building the backend engine)
 - A GGUF format model optimized for 8GB RAM (e.g., `Llama-3.2-3B-Instruct-Q8_0.gguf`)
+  - *Note: This specific 3B model and 8-bit quantization was chosen because it fits comfortably within 8GB of unified memory, preventing the out-of-memory crashes and severe disk-swapping bottlenecks typically seen with larger 8B models on constrained hardware.*
 
 ---
 
